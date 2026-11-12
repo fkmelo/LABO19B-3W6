@@ -87,8 +87,8 @@ function exemple6()
 	let lesCartes = document.getElementsByTagName("li");
 
 	for(let i = 0; i < lesCartes.length; i++){
-		
-		lesCartes[i].className = "trefle" + (i*2+1);
+
+		lesCartes[i].className = "trefle" + ((i % 3) + 1);
 	}
 }
 
@@ -97,6 +97,18 @@ function exemple7()
 {   
 	retirerLesClasses();
 	
+	let lesCartes = document.getElementsByTagName("li");
+
+	for(let i = 0; i < lesCartes.length; i++){
+
+		if(i % 2 == 0){
+			lesCartes[i].className = "pique" + (i+1);
+		}
+		else{
+			lesCartes[i].className = "coeur" + (i+1);
+		}
+		
+	}
 	
 }
 
@@ -104,18 +116,44 @@ function exemple7()
 function exemple8()
 {   
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+	
+	for(let i = 0; i < lesCartes.length; i++){
+	
+		lesCartes[i].className = "carreau" + (randNumber(13) + 1);
+	}
 }
 
 //=================================================================
 function exemple9()
 {   
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+	
+	for(let i = 0; i < lesCartes.length; i++){
+		
+		if(i == 0){
+					lesCartes[i].className = tabSortes[randNumber(3)] + (randNumber(8) + 1);
+		} else{
+			lesCartes[i].className = "pique" + (i + 1);
+		}
+
+	}
 }
 
 //=================================================================
 function exemple10()
 {   
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+
+	for(let i = 0; i < lesCartes.length; i++){
+		
+		lesCartes[i].className = tabSortes[randNumber(tabSortes.length)] + (randNumber(13) + 1);
+	}
 }
 
 
